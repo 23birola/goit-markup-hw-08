@@ -1,0 +1,30 @@
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  transition: border 250ms var(--timing-fn);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-color);
+  }
+}
+
+.client-icon {
+  fill: #afb1b8;
+  transition: fill 250ms var(--timing-fn);
+
+  .client-link:hover &,
+  .client-link:focus & {
+    fill: var(--accent-color);
+  }
+}

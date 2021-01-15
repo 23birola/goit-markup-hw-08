@@ -1,0 +1,110 @@
+.site-nav {
+  display: flex;
+}
+.site-nav .logo {
+  margin-right: 93px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ececec;
+  text-align: center;
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+
+.logo-accent {
+  color: var(--accent-color);
+}
+
+.site-nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav-list li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-nav-link {
+  display: block;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--main-color);
+
+  transition: color 250ms var(--timing-fn);
+}
+
+.site-nav-link:hover,
+.site-nav-link:focus,
+.contacts-list-item:hover,
+.contacts-list-item:focus,
+.adress-item:hover,
+.adress-item:focus,
+.adress-item.location:hover,
+.adress-item.location:focus,
+.site-nav-link.current {
+  color: var(--accent-color);
+}
+
+.site-nav-link.current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -33px;
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.header .contacts-list {
+  margin-left: auto;
+}
+.contacts-list {
+  display: flex;
+  align-items: center;
+}
+.contacts-list li:not(:last-child) {
+  margin-right: 50px;
+}
+.contacts-list-item {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--secondary-color);
+
+  transition: color 250ms var(--timing-fn);
+}
+
+.contact-icon {
+  display: inline-block;
+  margin-right: 10px;
+  fill: #757575;
+}
+
+.contacts-list-item-mail:hover .contact-icon,
+.contacts-list-item-mail:focus .contact-icon,
+.contacts-list-item-tel:hover .contact-icon,
+.contacts-list-item-tel:focus .contact-icon {
+  fill: var(--accent-color);
+}
