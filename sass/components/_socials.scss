@@ -1,9 +1,18 @@
 .social-links-list {
   display: flex;
-  justify-content: space-between;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-bottom: 30px;
+  justify-content: center;
+}
+
+// .social-links-list {
+//   display: flex;
+//   justify-content: space-between;
+//   margin-left: 32px;
+//   margin-right: 32px;
+//   margin-bottom: 30px;
+// }
+
+.social-links-item:not(:last-child) {
+  margin-right: 10px;
 }
 
 .social-links-link {
@@ -34,4 +43,12 @@
   .social-links-link:focus & {
     fill: #fff;
   }
+}
+
+.join .social-links-icon {
+  fill: #fff;
+}
+
+.join .social-links-link {
+  background-color: rgba(255, 255, 255, 0.1);
 }

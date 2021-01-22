@@ -4,13 +4,8 @@ footer {
   background-color: #2f303a;
 }
 
-.footer .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-left-side {
-  display: flex;
+.logo.dark-theme {
+  color: #ffffff;
 }
 
 .footer .logo {
@@ -18,10 +13,15 @@ footer {
   margin-bottom: 20px;
 }
 
-.adress-list li:not(:last-child) {
-  margin-bottom: 9px;
+.adress-item:not(:last-child) {
+  margin-bottom: 8px;
 }
-.adress-item {
+
+.adress-list {
+  margin-bottom: 60px;
+}
+
+.adress-link {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
@@ -29,24 +29,6 @@ footer {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.adress-item.location {
-  color: #ffffff;
-}
-
-address {
-  font-style: normal;
-}
-
-.logo.dark-theme {
-  color: #ffffff;
-}
-
-.join {
-  width: 206px;
-  height: 80px;
-  margin-left: 70px;
-  margin-top: 12px;
-}
 .join-text,
 .subscribe-text {
   margin-bottom: 20px;
@@ -60,30 +42,14 @@ address {
   color: #ffffff;
 }
 
-.join .social-links-list {
-  margin: 0px;
-}
-
-.join .social-links-icon {
-  fill: #fff;
-}
-
-.join .social-links-link {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.subscribe {
-  margin-top: 12px;
-}
-
-.subscribe-form {
-  display: flex;
-  align-items: center;
+.join {
+  margin-bottom: 60px;
 }
 
 .email {
   display: inline-flex;
-  width: 358px;
+  max-width: 450px;
+  width: 100%;
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
@@ -91,7 +57,6 @@ address {
   padding-left: 16px;
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-right: 12px;
 }
 
 .email::placeholder {
@@ -103,8 +68,67 @@ address {
   color: rgba(255, 255, 255, 0.6);
 }
 
+@media screen and (max-width: 1199px) {
+  .footer,
+  .join,
+  .subscribe {
+    text-align: center;
+  }
+
+  .email {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-left-side {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (max-width: 1199px) {
+    .footer-left-side {
+      padding-left: 76px;
+      padding-right: 89px;
+    }
+
+    .footer {
+      text-align: center;
+    }
+
+    .join {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .subscribe-form {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-adress {
+    margin-right: 70px;
+  }
+
+  .email {
+    margin-right: 12px;
+    width: 358px;
+  }
+}
+
 .submit-icon {
   position: absolute;
   bottom: 13px;
   right: 28px;
+}
+
+.adress-item.location {
+  color: #ffffff;
 }
