@@ -4,12 +4,13 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 480px 400px;
-}
-.hero .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+
+  & .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+  }
 }
 
 .main-title {

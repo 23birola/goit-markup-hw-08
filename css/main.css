@@ -100,39 +100,70 @@ img {
   overflow-y: scroll;
 }
 
+.policy-wrapper {
+  display: flex;
+}
+
 .modal {
-  max-width: 450px;
-  min-height: 609px;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 40px;
 }
 
+@media screen and (max-width: 480px) {
+  .modal {
+    max-width: 450px;
+    min-height: 609px;
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-policy-text {
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+}
+
+.contract {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: var(--accent-color);
+}
+
 @media screen and (min-width: 480px) {
   .modal {
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 450px;
     min-height: 609px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  .modal {
-    top: 208px;
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .modal {
-    top: 50%;
-    left: 50%;
     width: 528px;
     min-height: 521px;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .modal-form-policy-text,
+  .contract {
+    font-size: 14px;
+    line-height: 1.71;
   }
 }
 
@@ -167,22 +198,13 @@ img {
   color: var(--main-color);
 }
 
-.modal-form {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-label {
-  margin-bottom: 10px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--secondary-color);
-}
-
-label.form-label:last-child {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .form-input-wrapper {
@@ -220,7 +242,7 @@ label.form-label:last-child {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   margin-top: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 12px 16px;
   resize: none;
   transition: border 250ms var(--timing-fn);
@@ -251,6 +273,7 @@ label.form-label:last-child {
   background-size: 16px 15px;
   background-position: center;
   margin-right: 7px;
+  vertical-align: middle;
 }
 
 .modal-form-policy:checked + .modal-form-policy-text::before {
@@ -260,24 +283,6 @@ label.form-label:last-child {
   background-repeat: no-repeat;
   background-size: 11px 8px;
   background-position: center;
-}
-
-.modal-form-policy-text {
-  margin: 0 auto;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: var(--secondary-color);
-}
-
-.contract {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  text-decoration-line: underline;
-  color: var(--accent-color);
 }
 
 .btn {
@@ -366,10 +371,17 @@ label.form-label:last-child {
 .logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: #000000;
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .logo-accent {
@@ -480,6 +492,7 @@ label.form-label:last-child {
     text-align: center;
     padding-top: 60px;
     padding-bottom: 60px;
+    z-index: 2;
   }
   .menu-container.is-open {
     display: block;
@@ -883,29 +896,30 @@ footer {
   background-color: #2f303a;
 }
 
-.logo.dark-theme {
-  color: #ffffff;
-}
-
-.footer .logo {
+footer .logo {
   display: block;
   margin-bottom: 20px;
+}
+
+.logo.dark-theme {
+  color: #ffffff;
 }
 
 .adress-item:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.adress-list {
-  margin-bottom: 60px;
-}
-
 .adress-link {
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.adress-link.location {
+  color: #ffffff;
 }
 
 .join-text,
@@ -917,10 +931,6 @@ footer {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
-}
-
-.join {
-  margin-bottom: 60px;
 }
 
 .email {
@@ -954,12 +964,17 @@ footer {
   .email {
     margin-bottom: 20px;
   }
+  .adress-list,
+  .join {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .footer-left-side {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 }
 
@@ -991,6 +1006,9 @@ footer {
   .email {
     margin-right: 12px;
     width: 358px;
+  }
+  .subscribe {
+    margin-top: 12px;
   }
 }
 

@@ -2,31 +2,32 @@ footer {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #2f303a;
+
+  & .logo {
+    display: block;
+    margin-bottom: 20px;
+  }
 }
 
 .logo.dark-theme {
   color: #ffffff;
 }
 
-.footer .logo {
-  display: block;
-  margin-bottom: 20px;
-}
-
 .adress-item:not(:last-child) {
   margin-bottom: 8px;
 }
 
-.adress-list {
-  margin-bottom: 60px;
-}
-
 .adress-link {
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+
+  &.location {
+    color: #ffffff;
+  }
 }
 
 .join-text,
@@ -40,10 +41,6 @@ footer {
   text-transform: uppercase;
 
   color: #ffffff;
-}
-
-.join {
-  margin-bottom: 60px;
 }
 
 .email {
@@ -78,12 +75,18 @@ footer {
   .email {
     margin-bottom: 20px;
   }
+
+  .adress-list,
+  .join {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .footer-left-side {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   @media screen and (max-width: 1199px) {
@@ -120,6 +123,10 @@ footer {
   .email {
     margin-right: 12px;
     width: 358px;
+  }
+
+  .subscribe {
+    margin-top: 12px;
   }
 }
 
